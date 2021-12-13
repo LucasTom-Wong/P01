@@ -20,14 +20,15 @@ Our project is a trivia application that:
 * Clone this repo:
 ` $ git clone git@github.com:LucasTom-Wong/P01.git `
 
-* Create a virtual environment:
+* Create a virtual environment: <br>
 `$ python3 -m venv venv`
+<br>
 `$ source venv/bin/activate`
 
-* Download requirements.txt
+* Download requirements.txt <br>
 `$ pip install -r requirements.txt `
-* or
+* or <br>
 `$ pip3 install -r requirements.txt `
 
-* Run the app
-`$ python3 __init__.py
+* Run the app <br>
+`$ python3 __init__.py`
