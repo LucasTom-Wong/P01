@@ -12,11 +12,32 @@ def newQuestion():
     question = json.loads(openTrivia.read())
     return question
 
-def translateQuestion():
 
+def fQuestion(quest):
+    return quest['question']
+
+def fCorrect(quest):
+    return quest['correct_answer']
+
+def fIncorrect(quest):
+    listIncorrect = ""
+    incorrect = quest['incorrect_answers']
+
+    return listIncorrect
+
+# def toDict(string):
+#     return json.loads("'" + string + "'")
 
 def main():
-    print(newQuestion())
+    newis = newQuestion()
+    newiss = newis['results']
+    # print(newiss)
+    newres = newiss[0]
+    print(newres)
+    # print("\n")
+    print(fQuestion(newres))
+    print(fCorrect(newres))
+    print(fIncorrect(newres))
 
 if __name__ == "__main__":
     main()
