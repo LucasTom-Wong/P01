@@ -25,8 +25,8 @@ Our project is a trivia application that:
 `$ source venv/bin/activate`
 
 * Download requirements.txt <br>
-`$ pip install -r requirements.txt `
-* or <br>
+`$ pip install -r requirements.txt ` <br>
+or <br>
 `$ pip3 install -r requirements.txt `
 
 * Run the app <br>
