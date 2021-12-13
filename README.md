@@ -17,3 +17,17 @@ Our project is a trivia application that:
 
 ## Launch Codes :
 
+* Clone this repo:
+` $ git clone git@github.com:LucasTom-Wong/P01.git `
+
+* Create a virtual environment:
+`$ python3 -m venv venv`
+`$ source venv/bin/activate`
+
+* Download requirements.txt
+`$ pip install -r requirements.txt `
+* or
+`$ pip3 install -r requirements.txt `
+
+* Run the app
+`$ python3 __init__.py
