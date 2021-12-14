@@ -11,33 +11,25 @@ def newQuestion():
     url = "https://opentdb.com/api.php?amount=1&difficulty=medium&type=multiple"
     openTrivia = urllib.request.urlopen(url)
     question = json.loads(openTrivia.read())
-    return question
-
+    question = question['results']
+    return question[0]
 
 def fQuestion(quest):
     return quest['question']
 
 def fCorrect(quest):
-    return quest['correct_answer']
+    return "" + quest['correct_answer']
 
 def fIncorrect(quest):
     listIncorrect = ""
     incorrect = quest['incorrect_answers']
     for str in incorrect:
-        listIncorrect += '"' + str + '"' +  " "
+        listIncorrect += str +  " @!!#@ "
     return listIncorrect
-
-# def toDict(string):
-#     return json.loads("'" + string + "'")
 
 def main():
     ssl._create_default_https_context = ssl._create_unverified_context
-    newis = newQuestion()
-    newiss = newis['results']
-    # print(newiss)
-    newres = newiss[0]
-    print(newres)
-    # print("\n")
+    newres = newQuestion()
     print(fQuestion(newres))
     print(fCorrect(newres))
     print(fIncorrect(newres))
