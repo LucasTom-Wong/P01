@@ -1,0 +1,9 @@
+﻿Format: firstL -- TIMESTAMP -- changes and/or additions
+---------------------------------------------------------------------------------------------------------------------
+lucasT, juliaN – 2021.12.9 2043 EST – Updated design document
+juliaN  - - 2021-12-09 20:46  - -  Added page outlines, updated target deadline, updated visuals
+lucasT – 2021.12.9 time – added specifics to document to specify what we plan to do, updated visuals
+juliaN  - -  2021-12-10 8:37  - -  Started database creation
+juliaN  - -  2021-12-12 21:23  - -  Added summary/pitch to repo
+juliaN  - -  2021-12-13 8:38  - -  Continued work on databases.py
+lucasT – 2021.12.13 2150 – Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
