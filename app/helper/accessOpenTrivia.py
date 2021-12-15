@@ -15,17 +15,21 @@ def newQuestion():
     return question[0]
 
 def fQuestion(quest):
-    return quest['question']
+    return "" + quest['question']
 
 def fCorrect(quest):
     return "" + quest['correct_answer']
 
 def fIncorrect(quest):
-    listIncorrect = ""
+    listIncorrect = []
     incorrect = quest['incorrect_answers']
     for str in incorrect:
-        listIncorrect += str +  " @!!#@ "
+        listIncorrect.append(str)
+    # print (listIncorrect)
     return listIncorrect
+
+def fListPossible(quest):
+    return fIncorrect(quest).append(fCorrect(quest))
 
 def main():
     ssl._create_default_https_context = ssl._create_unverified_context
@@ -33,6 +37,7 @@ def main():
     print(fQuestion(newres))
     print(fCorrect(newres))
     print(fIncorrect(newres))
+    print(fListPossible(newres))
 
 if __name__ == "__main__":
     main()

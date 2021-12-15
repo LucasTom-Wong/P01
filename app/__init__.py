@@ -8,19 +8,23 @@ import urllib
 import ssl
 import helper.accessOpenTrivia
 from flask import Flask, render_template, request, session
+
 app = Flask(__name__)    #create Flask object
-def temp():
-    question1 = newQuestion()
-    question1 = question1['results']
-    question1 = question1[0]
+
+def randomizedQuestions(quest):
+    list = fListPossible(quest)
+    blue = []
+    for str in list
+        blue.append(str)
+    return blue
 
 @app.route("/")
 def disp_triviaPage():
     ssl._create_default_https_context = ssl._create_unverified_context
-    newis = helper.accessOpenTrivia.newQuestion()
-    newiss = newis['results']
-    newiss = newiss[0]
-    return render_template('trivia.html', question = helper.accessOpenTrivia.fQuestion(newiss))
+    newis = temp()
+    return render_template('trivia.html', question = helper.accessOpenTrivia.fQuestion(newis), listAnswers = randomizedQuestions(newis))
+
+
 
 if __name__ == "__main__":
     app.debug = True
