@@ -7,6 +7,8 @@ import urllib.request
 import urllib
 import ssl
 import helper.accessOpenTrivia
+import random
+import os
 from flask import Flask, render_template, request, session
 
 app = Flask(__name__)    #create Flask object
@@ -16,12 +18,16 @@ def randomizedQuestions(quest):
     blue = []
     for str in list:
         blue.append(str)
+    print (blue)
+    blue = random.sample(blue, len(blue))
     return blue
 
 @app.route("/")
 def disp_triviaPage():
     ssl._create_default_https_context = ssl._create_unverified_context
     newis = helper.accessOpenTrivia.newQuestion()
+    # print(randomizedQuestions(newis))
+    # print(randomizedQuestions(newis)[0])
     return render_template('trivia.html', question = helper.accessOpenTrivia.fQuestion(newis), listAnswers = randomizedQuestions(newis))
 
 
