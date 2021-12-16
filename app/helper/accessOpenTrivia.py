@@ -29,7 +29,10 @@ def fIncorrect(quest):
     return listIncorrect
 
 def fListPossible(quest):
-    return fIncorrect(quest).append(fCorrect(quest))
+    # print(fIncorrect(quest).append(fCorrect(quest)))
+    super_List = fIncorrect(quest)
+    super_List.append(fCorrect(quest))
+    return super_List
 
 def main():
     ssl._create_default_https_context = ssl._create_unverified_context
