@@ -22,14 +22,16 @@ def randomizedQuestions(quest):
     blue = random.sample(blue, len(blue))
     return blue
 
-@app.route("/")
+@app.route("/trivia")
 def disp_triviaPage():
     ssl._create_default_https_context = ssl._create_unverified_context
     newis = helper.accessOpenTrivia.newQuestion()
     # print(randomizedQuestions(newis))
     # print(randomizedQuestions(newis)[0])
     return render_template('trivia.html', question = helper.accessOpenTrivia.fQuestion(newis), listAnswers = randomizedQuestions(newis))
-
+@app.route("/home")
+def disp_homePage():
+    return render_template("home.html")
 
 
 if __name__ == "__main__":
