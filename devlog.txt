@@ -6,4 +6,9 @@ lucasT – 2021.12.9 time – added specifics to document to specify what we pla
 juliaN  - -  2021-12-10 8:37  - -  Started database creation
 juliaN  - -  2021-12-12 21:23  - -  Added summary/pitch to repo
 juliaN  - -  2021-12-13 8:38  - -  Continued work on databases.py
-lucasT – 2021.12.13 2150 – Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
+lucasT – 2021.12.13 21:50 – Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
+juliaN  - -  2021–12-14 8:29  - -  More database work
+juliaN  - -  2021-12-14 8:36  - -  Began implementing database testing
+juliaN  - -  2021-12-15 8:38  - -  Fixed database syntax, got a working test
+shriyaA – 2021-12-15 8:38 – Completed template for displaying trivia questions
+lucasT – 2021-12-15 22:47 – Created functions for questions and answers to be displayed on template
