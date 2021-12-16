@@ -7,8 +7,10 @@ juliaN  - -  2021-12-10 8:37  - -  Started database creation
 juliaN  - -  2021-12-12 21:23  - -  Added summary/pitch to repo
 juliaN  - -  2021-12-13 8:38  - -  Continued work on databases.py
 lucasT – 2021.12.13 21:50 – Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
+shriyaA – 2021-12-14 8:38 – Completed template for displaying trivia questions
 juliaN  - -  2021–12-14 8:29  - -  More database work
 juliaN  - -  2021-12-14 8:36  - -  Began implementing database testing
 juliaN  - -  2021-12-15 8:38  - -  Fixed database syntax, got a working test
-shriyaA – 2021-12-15 8:38 – Completed template for displaying trivia questions
+shriyaA – 2021-12-15 8:38 – Added CSS to the trivia.html and added Flask to make use of it as a template
 lucasT – 2021-12-15 22:47 – Created functions for questions and answers to be displayed on template
+shriyaA – 2021-12-16 8:37 – Randomized the answer choices in __init__.py, added a home page to connect to the button on the trivia page
