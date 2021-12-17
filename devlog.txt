@@ -1,14 +1,56 @@
-﻿Format: firstL -- TIMESTAMP -- changes and/or additions
+﻿# Shoebuckle: Lucas (LTW) Tom-Wong, Julia (Lia) Nelson, Shriya Anand
+# SoftDev
+# P01 ArRESTed Development: Trivia
+
+
+Format: 
+firstL, p2firstL TIMESTAMP
+- changes and/or additions
 ---------------------------------------------------------------------------------------------------------------------
-lucasT, juliaN – 2021.12.9 2043 EST – Updated design document
-juliaN  - - 2021-12-09 20:46  - -  Added page outlines, updated target deadline, updated visuals
-lucasT – 2021.12.9 time – added specifics to document to specify what we plan to do, updated visuals
-juliaN  - -  2021-12-10 8:37  - -  Started database creation
-juliaN  - -  2021-12-12 21:23  - -  Added summary/pitch to repo
-juliaN  - -  2021-12-13 8:38  - -  Continued work on databases.py
-lucasT – 2021.12.13 21:50 – Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
-juliaN  - -  2021–12-14 8:29  - -  More database work
-juliaN  - -  2021-12-14 8:36  - -  Began implementing database testing
-juliaN  - -  2021-12-15 8:38  - -  Fixed database syntax, got a working test
-shriyaA – 2021-12-15 8:38 – Completed template for displaying trivia questions
-lucasT – 2021-12-15 22:47 – Created functions for questions and answers to be displayed on template
+lucasT, juliaN 2021-12-9 20:43
+– Updated design document
+
+juliaN 2021-12-09 20:46  
+- Added page outlines
+- updated target deadline
+- updated visuals
+
+lucasT 2021-12-9 8:40 
+– added specifics to document to specify what we plan to do
+- updated visuals
+
+juliaN  2021-12-10 8:37  
+- Started database creation
+
+juliaN  2021-12-12 21:23  
+- Added summary/pitch to repo
+
+juliaN  2021-12-13 8:38  
+- Continued work on databases.py
+
+lucasT 2021-12-13 21:50 
+– Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
+
+shriyaA 2021-12-14 8:38 
+– Completed template for displaying trivia questions
+
+juliaN 2021–12-14 8:36 
+- More database work
+- Began implementing database testing
+
+juliaN 2021-12-15 8:38  
+- Fixed database syntax, got a working test
+
+shriyaA 2021-12-15 8:38 
+– Added CSS to the trivia.html and added Flask to make use of it as a template
+
+lucasT 2021-12-15 22:47 
+– Created functions for questions and answers to be displayed on template
+
+shriyaA 2021-12-16 8:37 
+- Fixed buttons
+– Randomized the answer choices in __init__.py
+- added a home page to connect to the button on the trivia page
+
+lucasT 2021-12-16 2122
+- Reformatted devlog to match other teams
