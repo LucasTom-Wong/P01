@@ -54,3 +54,8 @@ shriyaA 2021-12-16 8:37
 
 lucasT 2021-12-16 2122
 - Reformatted devlog to match other teams
+
+shriyaA 2021-12-17 8:38
+- made the question a universal variable
+- added a template for submitting the answer
+- checked if the answer selected is correct
