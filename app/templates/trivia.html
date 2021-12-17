@@ -11,7 +11,7 @@
 
     <title>Trivia</title>
   </head>
-<form action = "/home">
+<form action = "/">
 <input type="submit" name="home" value = "Home"> </input>
 </form>
 <h1 class="mx-auto" style="width: 300px;"> <strong>Trivia Page</strong></h1>
@@ -19,11 +19,11 @@
 <p>&nbsp;</p>
 <p>{{question}}</p>
 
-<form action = "/______">
-<input class="btn btn-outline-success" type="submit" name="ans1" value = "{{listAnswers[0]}}"> </input>
-<input class="btn btn-outline-success" type="submit" name="ans2" value = "{{listAnswers[1]}}"> </input>
-<input class="btn btn-outline-success" type="submit" name="ans3" value = "{{listAnswers[2]}}"> </input>
-<input class="btn btn-outline-success" type="submit" name="ans4" value = "{{listAnswers[3]}}" > </input>
+<form action = "/submitAnswer">
+<input class="btn btn-outline-success" type="submit" name="ans" value = "{{listAnswers[0]}}"> </input>
+<input class="btn btn-outline-success" type="submit" name="ans" value = "{{listAnswers[1]}}"> </input>
+<input class="btn btn-outline-success" type="submit" name="ans" value = "{{listAnswers[2]}}"> </input>
+<input class="btn btn-outline-success" type="submit" name="ans" value = "{{listAnswers[3]}}" > </input>
 </form>
 
 <form action = "/back">
