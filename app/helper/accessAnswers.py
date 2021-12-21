@@ -10,15 +10,15 @@ import ssl
 def newAnswer(question):
     url = "https://api.m3o.com/v1/answer/Question"
     values = {
-        '-H' : "Content-Type: application/json",
-        '-H' : "Authorization: Bearer OTEzNzY2ZDYtMmI2OC00MDE5LWIwMTktNzVhMjg2OGUyOTNk",
-        '-d' : '{"query": "microsoft"}'
+        'Content-Type' : 'application/json',
+        'Authorization' : 'Bearer OTEzNzY2ZDYtMmI2OC00MDE5LWIwMTktNzVhMjg2OGUyOTNk',
     }
+    data = {"query" : "microsoft"}
 
-    data = urllib.parse.urlencode(values)
-    data = data.encode('ascii') # data should be bytes
+    header = urllib.parse.urlencode(values)
+    header = header.encode('ascii') # data should be bytes
 
-    req = urllib.request.Request(url, data)
+    req = urllib.request.Request(url, header, data)
     try: urllib.request.urlopen(req)
     except urllib.error.URLError as e:
         print(e.reason)
