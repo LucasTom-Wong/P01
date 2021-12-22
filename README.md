@@ -15,6 +15,10 @@ Our project is a trivia application that:
 * Displays a leaderboard
 * Utilizes APIs, namely Fun Facts, Abstract Public Holidays, and Open Trivia
 
+## API KB :
+* Open Trivia (https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_OpenTrivia.md)
+* Answers (https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Answers.md)
+
 ## Launch Codes :
 
 * Clone this repo: <br>
