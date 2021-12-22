@@ -13,11 +13,12 @@ Our project is a trivia application that:
 * Keeps score/track of questions
 * Records the highest score on a leaderboard
 * Displays a leaderboard
-* Utilizes APIs, namely Fun Facts, Abstract Public Holidays, and Open Trivia
+* Utilizes APIs, namely Fun Facts, Answers, and Open Trivia
 
 ## API KB :
 * Open Trivia (https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_OpenTrivia.md)
 * Answers (https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_Answers.md)
+* Fun Facts (https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_FunFacts.md)
 
 ## Launch Codes :
 
