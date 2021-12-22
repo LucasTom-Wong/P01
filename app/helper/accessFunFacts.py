@@ -9,9 +9,12 @@ import ssl
 
 def newFact():
     url = "https://asli-fun-fact-api.herokuapp.com/"
-    funFact = urllib.request.urlopen(url)
-    fact = json.loads(funFact.read())
-    return fact
+    try:
+        funFact = urllib.request.urlopen(url)
+        fact = json.loads(funFact.read())
+        return fact
+    except:
+        return "no fun fact :("
 
 def fFact(fffact):
     return fffact['fact']

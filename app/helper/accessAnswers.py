@@ -10,6 +10,9 @@ import ssl
 def newAnswer(question):
     url = "https://api.m3o.com/v1/answer/Question"
 
+    # key = str(open("../keys/key_Answers.txt", "r").read())
+    # print(key)
+
     header = {
         'Content-Type' : 'application/json',
         'Authorization' : 'Bearer ZGRlNjhhYWQtN2UyOS00ZTY5LWI2OTctZGU0ZmIwNWY2NThh',
