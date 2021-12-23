@@ -3,59 +3,68 @@
 # P01 ArRESTed Development: Trivia
 
 
-Format: 
+Format:
 firstL, p2firstL TIMESTAMP
 - changes and/or additions
 ---------------------------------------------------------------------------------------------------------------------
 lucasT, juliaN 2021-12-9 20:43
 – Updated design document
 
-juliaN 2021-12-09 20:46  
+juliaN 2021-12-09 20:46
 - Added page outlines
 - updated target deadline
 - updated visuals
 
-lucasT 2021-12-9 8:40 
+lucasT 2021-12-9 8:40
 – added specifics to document to specify what we plan to do
 - updated visuals
 
-juliaN  2021-12-10 8:37  
+juliaN  2021-12-10 8:37
 - Started database creation
 
-juliaN  2021-12-12 21:23  
+juliaN  2021-12-12 21:23
 - Added summary/pitch to repo
 
-juliaN  2021-12-13 8:38  
+juliaN  2021-12-13 8:38
 - Continued work on databases.py
 
-lucasT 2021-12-13 21:50 
+lucasT 2021-12-13 21:50
 – Updated accessOpenTrivia.py with functions allowing the returning of questions, correct answer, and incorrect answers
 
-shriyaA 2021-12-14 8:38 
+shriyaA 2021-12-14 8:38
 – Completed template for displaying trivia questions
 
-juliaN 2021–12-14 8:36 
+juliaN 2021–12-14 8:36
 - More database work
 - Began implementing database testing
 
-juliaN 2021-12-15 8:38  
+juliaN 2021-12-15 8:38
 - Fixed database syntax, got a working test
 
-shriyaA 2021-12-15 8:38 
+shriyaA 2021-12-15 8:38
 – Added CSS to the trivia.html and added Flask to make use of it as a template
 
-lucasT 2021-12-15 22:47 
+lucasT 2021-12-15 22:47
 – Created functions for questions and answers to be displayed on template
 
-shriyaA 2021-12-16 8:37 
+shriyaA 2021-12-16 8:37
 - Fixed buttons
 – Randomized the answer choices in __init__.py
 - added a home page to connect to the button on the trivia page
 
-lucasT 2021-12-16 2122
+lucasT 2021-12-16 21:22
 - Reformatted devlog to match other teams
 
 shriyaA 2021-12-17 8:38
 - made the question a universal variable
 - added a template for submitting the answer
 - checked if the answer selected is correct
+
+lucasT 2021-12-22 8:15
+- Updated readme.md and added api key folders
+
+lucasT 2021-12-23 8:35
+- Created accessMeme.py
+  - Returns meme images
+- Created testDisplayImages.html
+  - I forgot how to display images in html
