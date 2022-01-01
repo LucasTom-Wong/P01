@@ -68,3 +68,14 @@ lucasT 2021-12-23 8:35
   - Returns meme images
 - Created testDisplayImages.html
   - I forgot how to display images in html
+
+lucasT 2022-1-1 1628
+- Created accessRandomDuck.py
+  - Returns images of a random duck
+- Changed home.html
+  - Now has a button to go to leaderboard
+    - feature needs to be added to create leaderboard page
+  - Now has button to start trivia
+    - feature needs to be added to do trivia
+  - Now shows an image of a duck
+  - Carraaaasol?? was removed
