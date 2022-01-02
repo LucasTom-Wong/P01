@@ -9,10 +9,16 @@ import ssl
 
 def newQuestion(): #returns the new question from the api
     url = "https://opentdb.com/api.php?amount=1&difficulty=medium&type=multiple"
-    openTrivia = urllib.request.urlopen(url)
-    question = json.loads(openTrivia.read())
-    question = question['results']
-    return question[0]
+
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'}) #opens with firefox
+        quest = urllib.request.urlopen(req)
+        question = json.loads(quest.read())
+        question = question['results']
+        return question[0]
+    except urllib.error.URLError as e:
+        print(e.reason)
+        return "ahhhhhhhhhhh" #need to fix later with a better error
 
 def fQuestion(quest): #returns the question
     return "" + quest['question']
@@ -45,8 +51,9 @@ def fString_to_Answers(str):
     return quest
 
 def main():
-    ssl._create_default_https_context = ssl._create_unverified_context
+    # ssl._create_default_https_context = ssl._create_unverified_context
     newres = newQuestion()
+
     print(fQuestion(newres))
     print(fCorrect(newres))
     print(fIncorrect(newres))

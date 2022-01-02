@@ -79,3 +79,14 @@ lucasT 2022-1-1 1628
     - feature needs to be added to do trivia
   - Now shows an image of a duck
   - Carraaaasol?? was removed
+
+lucasT 2021-1-2 1816
+- Created leaderboard.html
+  - leaderboard
+  - doesn't work currently with database
+- Home.html
+  - Pictures of duck is now sized properly
+- lots of changes with ssl
+  - might be safer might not?
+  - answers still does not work
+- accessRandomDuck.py works better

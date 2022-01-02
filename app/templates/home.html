@@ -11,34 +11,38 @@
     <title>Trivia</title>
 </head>
 
-<h1 class="mx-auto" style="width: 600px;"> <strong>Welcome to TBD!</strong></h1>
-
 <div class="text-center">
-  <img src="https://random-d.uk/api/115.jpg" class="rounded mx-auto d-block"> <!-- https://random-d.uk/api/115.jpg -->
+  <h1 class="mx-auto" style="width: 600px;"> <strong>Welcome to TBD!</strong></h1>
 </div>
 
-<h4 class="mx-auto" style="width: 600px;"> <strong>Created by ShoeBuckle</strong></h4>
+<div class="text-center">
+  <img class="img-fluid" style="height: 300px;" src="{{url}}" class="rounded mx-auto d-block"> <!-- https://random-d.uk/api/115.jpg, need to find way to change image size -->
+</div>
 
+<div class="text-center">
+  <h4 class="mx-auto" style="width: 600px;"> <strong>Created by ShoeBuckle</strong></h4>
+</div>
 
-<div class="container">
-  <div class="row align-items-start">
-    <div class="col">
-      <!--
-      Leaderboard button? or Leaderboard
-      -->
-      <form action = "/leaderboard">
-      <input class="btn btn-outline-primary" type="submit" name="leaderboard" value = "Look at the leaderboard"> </input>
-      </form>
-    </div>
-    <div class="col">
-      <!--
-      Start New game button
-      -->
-      <form action = "/trivia">
-      <input class="btn btn-outline-primary" type="submit" name="trivia" value = "Start a new game"> </input>
-      </form>
+<div class="text-center">
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        <!--
+        Leaderboard button? or Leaderboard
+        -->
+        <form action = "/leaderboard">
+        <input class="btn btn-outline-primary" type="submit" name="leaderboard" value = "Look at the leaderboard"> </input>
+        </form>
+      </div>
+      <div class="col">
+        <!--
+        Start New game button
+        -->
+        <form action = "/trivia">
+        <input class="btn btn-outline-primary" type="submit" name="trivia" value = "Start a new game"> </input>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-
 </html>

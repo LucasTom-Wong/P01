@@ -9,8 +9,8 @@ import ssl
 
 def newMeme():
     url = "https://meme-api.herokuapp.com/gimme"
-    req = urllib.request.Request(url)
     try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'}) #opens with firefox
         meme = urllib.request.urlopen(req)
         meme = json.loads(meme.read())
         return meme
@@ -29,7 +29,7 @@ def grabImage3(meme): #chunky
     return meme
 
 def main():
-    ssl._create_default_https_context = ssl._create_unverified_context
+    # ssl._create_default_https_context = ssl._create_unverified_context
     x = newMeme()
     print(x)
     y = grabImage3(x)
