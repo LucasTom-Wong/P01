@@ -138,8 +138,8 @@ def disp_submitAnswer():
     print(answer)
     print(helper.accessOpenTrivia.fCorrect(newis))
     if (answer == helper.accessOpenTrivia.fCorrect(newis)):
-        return render_template("submitAnswer.html", answer = "CORRECT")
-    return render_template("submitAnswer.html", answer = "WRONG")
+        return render_template("submitAnswer.html", answer = "CORRECT", color = '#DAF7A6')
+    return render_template("submitAnswer.html", answer = "WRONG", color = '#FAA0A0')
 
 if __name__ == "__main__":
     app.debug = True
