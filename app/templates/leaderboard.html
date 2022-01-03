@@ -19,23 +19,15 @@
   <h1 class="mx-auto" style="width: 600px;"> <strong>TBD Leaderboard</strong></h1>
 </div>
 
-
-
-<div class="text-center">
-  <table class="table">
-    <thead>
-        <tr>
-            <th style="border: solid black">Name</th>
-            <th style="border: solid black">Score</th>
-        </tr>
+<table class="table table-striped table-hover table-sm">
+      <tr>
+          <th style="border: solid black">Name</th>
+          <th style="border: solid black">Score</th>
+      </tr>
         {% for names in leaders %}
-        <tr>
-            <td>{{ names }}</td>
-            <td>{{ leaders[names] }}</td>
-        </tr>
+      <tr>
+      <td>{{ names }}</td>
+      <td>{{ leaders[names] }}</td>
+      </tr>
         {% endfor %}
-    </thead>
-  </div>
 </div>
-
-{{x}}

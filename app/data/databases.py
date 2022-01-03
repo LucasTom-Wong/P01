@@ -75,8 +75,7 @@ class Databases:
                 need_update = True
         return need_update
 
-    # adds new entry into leaderboard, should only be run if score is higher than any
-    # score in leaderboard
+    # adds new entry into leaderboard if necessary
     def update_leaderboard(self, name:str, score:int):
 
         need_update = Databases.update_check(self, score)
@@ -138,6 +137,7 @@ class Databases:
         if (q == None):
             return False
         return True
+        
     # adds a question into used question database
     def add_used_question(self, question:str):
         # For debug but want to use command, delete later

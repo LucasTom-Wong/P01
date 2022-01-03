@@ -13,7 +13,7 @@ import random
 from os import path, remove
 from data.databases import Databases
 from flask import Flask, render_template, request, session
-# import data.test
+import helper.accessMeme
 
 app = Flask(__name__)    #create Flask object
 newis = helper.accessOpenTrivia.newQuestion()
@@ -130,7 +130,10 @@ def disp_triviaPage():
     newis = helper.accessOpenTrivia.newQuestion()
     # print(randomizedQuestions(newis))
     # print(randomizedQuestions(newis)[0])
-    return render_template('trivia.html', question = helper.accessOpenTrivia.fQuestion(newis), listAnswers = randomizedQuestions(newis))
+
+    newmeme = helper.accessMeme.fullMeme()
+
+    return render_template('trivia.html', question = helper.accessOpenTrivia.fQuestion(newis), listAnswers = randomizedQuestions(newis), url = newmeme)
 
 @app.route("/submitAnswer", methods = ['GET', 'POST'])
 def disp_submitAnswer():

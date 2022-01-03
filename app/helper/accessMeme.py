@@ -28,6 +28,10 @@ def grabImage3(meme): #chunky
     meme = meme[3]
     return meme
 
+def fullMeme():
+    x = newMeme()
+    return grabImage3(x)
+
 def main():
     # ssl._create_default_https_context = ssl._create_unverified_context
     x = newMeme()
