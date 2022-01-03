@@ -141,8 +141,13 @@ def disp_submitAnswer():
     print(answer)
     print(helper.accessOpenTrivia.fCorrect(newis))
     if (answer == helper.accessOpenTrivia.fCorrect(newis)):
-        return render_template("submitAnswer.html", answer = "CORRECT", color = '#DAF7A6')
-    return render_template("submitAnswer.html", answer = "WRONG", color = '#FAA0A0')
+        return render_template("rightAnswer.html")
+    return render_template("wrongAnswer.html")
+
+@app.route("/end", methods = ['GET', 'POST'])
+def disp_endPage():
+    return render_template("end.html")
+
 
 if __name__ == "__main__":
     app.debug = True
