@@ -55,6 +55,35 @@ def show_result(success:bool):
 	else:
   		print("Failed")
 
+def convertToFormLeaderboard(database_leaderboard):
+    tempString = ""
+
+    for names in database_leaderboard:
+        tempString += names
+        # converting to string because...
+
+    tempString = tempString.strip()
+
+    new_string = tempString.replace('[', ',').replace(']', ',').replace('(', ',').replace(')', ',')
+    new_string = new_string.replace(',,', ',')
+    new_string = new_string.replace(" ", "")
+    new_string = new_string[1:-1]
+    new_string = new_string.replace(',,', ',')
+    print(new_string)
+    values = new_string.split(',')
+    print(values)
+
+    formAA = {}
+
+    formAA.update({values[1]: values[2]})
+    formAA.update({values[4]: values[5]})
+    formAA.update({values[7]: values[8]})
+    formAA.update({values[10]: values[11]})
+    formAA.update({values[13]: values[14]})
+    print(formAA)
+    # print(tempString)
+    return formAA
+
 @app.route("/")
 def disp_homePage():
     duckimage = helper.accessRandomDuck.fullDuck()
@@ -78,6 +107,12 @@ def display_Leaderboard():
     d.print_databases()
 
     debug = str(d.return_leaderboard())
+    # print("wy")
+    print(debug)
+    # print("hi")
+
+    x = convertToFormLeaderboard(debug)
+    print(x)
 
     # print("Leaderboard data in order: " + str(d.return_leaderboard()))
     leaders = {
@@ -86,7 +121,7 @@ def display_Leaderboard():
         'Derrick': 3
     }
 
-    return render_template("leaderboard.html", leaders = leaders, debug = debug)
+    return render_template("leaderboard.html", leaders = x)
 
 @app.route("/trivia")
 def disp_triviaPage():

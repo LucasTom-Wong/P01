@@ -90,3 +90,6 @@ lucasT 2021-1-2 1816
   - might be safer might not?
   - answers still does not work
 - accessRandomDuck.py works better
+
+lucasT 2021-1-2 2242
+- Leaderboard now properly shows the leaderboard with the database (hardcoded in to show 5 places)
