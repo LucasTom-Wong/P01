@@ -25,7 +25,7 @@ def grabImage0(meme): #smol
 
 def grabImage3(meme): #chunky
     meme = meme['preview']
-    meme = meme[3]
+    meme = meme[2]
     return meme
 
 def fullMeme():
