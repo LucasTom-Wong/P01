@@ -19,6 +19,9 @@ app = Flask(__name__)    #create Flask object
 newis = helper.accessOpenTrivia.newQuestion()
 # ssl._create_default_https_context = ssl._create_unverified_context
 
+d = Databases()
+db_file = "databases.db"
+
 def randomizedQuestions(quest):
     list = helper.accessOpenTrivia.fListPossible(quest)
     blue = []
@@ -29,14 +32,10 @@ def randomizedQuestions(quest):
     return blue
 
 def purge():
-	global d
-	global db_file
-	db_file = "perm.db"
-	if path.exists(db_file):
-		remove(db_file) #makes sure none of previous test is there
-		d = Databases()
-	else:
-		d = Databases()
+    if path.exists(db_file):
+        remove(db_file) #makes sure none of previous test is there
+        d = Databases()
+    d = Databases()
 
 def test_leaderboard_update(num:int=100):
 	success = False
@@ -75,11 +74,26 @@ def convertToFormLeaderboard(database_leaderboard):
 
     formAA = {}
 
-    formAA.update({values[1]: values[2]})
-    formAA.update({values[4]: values[5]})
-    formAA.update({values[7]: values[8]})
-    formAA.update({values[10]: values[11]})
-    formAA.update({values[13]: values[14]})
+    try:
+        formAA.update({values[1]: values[2]})
+    except:
+        formAA.update({"empty": 0})
+    try:
+        formAA.update({values[4]: values[5]})
+    except:
+        formAA.update({"empty": 0})
+    try:
+        formAA.update({values[7]: values[8]})
+    except:
+        formAA.update({"empty": 0})
+    try:
+        formAA.update({values[10]: values[11]})
+    except:
+        formAA.update({"empty": 0})
+    try:
+        formAA.update({values[13]: values[14]})
+    except:
+        formAA.update({"empty": 0})
     print(formAA)
     # print(tempString)
     return formAA
@@ -91,37 +105,39 @@ def disp_homePage():
 
 @app.route("/leaderboard")
 def display_Leaderboard():
+    global d
+    d = Databases()
+    global db_file
+    db_file = "databases.db"
+    # print("start test!!")
+    # purge()
+    # print("purged")
 
-    print("start test!!")
-    purge()
-    print("purged")
-
-    # test_question_creation(5)
-    # d.add_question("1", "2", "3")
-
-    test_leaderboard_update(5)
-    d.update_leaderboard("EXTRA", 3)
-
-    # test_return_questions(6)
+    # test_leaderboard_update(5)
+    # d.update_leaderboard("EXTRA", 3)
 
     d.print_databases()
 
     debug = str(d.return_leaderboard())
     # print("wy")
-    print(debug)
+    # print(debug)
     # print("hi")
 
     x = convertToFormLeaderboard(debug)
     print(x)
 
     # print("Leaderboard data in order: " + str(d.return_leaderboard()))
-    leaders = {
-        'Bob': 1,
-        'Jason': 2,
-        'Derrick': 3
-    }
+    # leaders = {
+    #     'Bob': 1,
+    #     'Jason': 2,
+    #     'Derrick': 3
+    # }
 
     return render_template("leaderboard.html", leaders = x)
+
+@app.route("/between")
+def disp_Between():
+    return render_template('')
 
 @app.route("/trivia")
 def disp_triviaPage():
@@ -151,4 +167,10 @@ def disp_endPage():
 
 if __name__ == "__main__":
     app.debug = True
+
+    # global d
+    # d = Databases()
+    # global db_file
+    # db_file = "perm.db"
+
     app.run()
