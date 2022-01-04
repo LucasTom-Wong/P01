@@ -20,12 +20,18 @@ def newFact():
 def fFact(fffact):
     return fffact['fact']
 
+def fullFact():
+    newis = newFact()
+    newres = newis['data']
+    return(fFact(newres))
+
 def main():
     # ssl._create_default_https_context = ssl._create_unverified_context
-    newis = newFact()
-    # print(newis)
-    newres = newis['data']
-    print(fFact(newres))
+    # newis = newFact()
+    # # print(newis)
+    # newres = newis['data']
+    # print(fFact(newres))
+    print(fullFact())
 
 
 if __name__ == "__main__":

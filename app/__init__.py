@@ -9,6 +9,7 @@ import urllib
 import ssl
 import helper.accessOpenTrivia
 import helper.accessRandomDuck
+import helper.accessFunFacts
 import random
 from os import path, remove
 from data.databases import Databases
@@ -19,8 +20,9 @@ app = Flask(__name__)    #create Flask object
 newis = helper.accessOpenTrivia.newQuestion()
 # ssl._create_default_https_context = ssl._create_unverified_context
 
-d = Databases()
 db_file = "databases.db"
+d = Databases()
+score = 0
 
 def randomizedQuestions(quest):
     list = helper.accessOpenTrivia.fListPossible(quest)
@@ -137,7 +139,11 @@ def display_Leaderboard():
 
 @app.route("/between")
 def disp_Between():
-    return render_template('')
+    global score
+    score = 0
+    fact = helper.accessFunFacts.fullFact()
+    # print(fact)
+    return render_template('inBetween.html', fact = fact)
 
 @app.route("/trivia")
 def disp_triviaPage():
@@ -153,12 +159,14 @@ def disp_triviaPage():
 
 @app.route("/submitAnswer", methods = ['GET', 'POST'])
 def disp_submitAnswer():
+    global score
     answer = request.args['ans']
     print(answer)
     print(helper.accessOpenTrivia.fCorrect(newis))
     if (answer == helper.accessOpenTrivia.fCorrect(newis)):
-        return render_template("rightAnswer.html")
-    return render_template("wrongAnswer.html")
+        score += 1
+        return render_template("rightAnswer.html", score = score)
+    return render_template("wrongAnswer.html", score = score)
 
 @app.route("/end", methods = ['GET', 'POST'])
 def disp_endPage():
