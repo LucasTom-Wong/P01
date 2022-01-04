@@ -18,7 +18,7 @@ def newQuestion(): #returns the new question from the api
         return question[0]
     except urllib.error.URLError as e:
         print(e.reason)
-        return "ahhhhhhhhhhh" #need to fix later with a better error
+        return {"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"In Terraria, which of these items is NOT crafted at a Mythril Anvil?","correct_answer":"Ankh Charm","incorrect_answers":["Venom Staff","Sky Fracture","Orichalcum Tools"]} #need to fix later with a better error
 
 def fQuestion(quest): #returns the question
     return "" + quest['question']
