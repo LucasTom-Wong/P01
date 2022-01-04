@@ -135,9 +135,9 @@ def display_Leaderboard():
 
     return render_template("leaderboard.html", leaders = x)
 
-@app.route("/between")
-def disp_Between():
-    return render_template('')
+# @app.route("/between")
+# def disp_Between():
+#     return render_template('')
 
 @app.route("/trivia")
 def disp_triviaPage():
