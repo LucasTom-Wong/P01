@@ -21,7 +21,10 @@ def newQuestion(): #returns the new question from the api
         return {"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"In Terraria, which of these items is NOT crafted at a Mythril Anvil?","correct_answer":"Ankh Charm","incorrect_answers":["Venom Staff","Sky Fracture","Orichalcum Tools"]} #need to fix later with a better error
 
 def fQuestion(quest): #returns the question
-    return "" + quest['question']
+    str = "" + quest['question']
+    str = str.replace("&#039;", "'")
+    str = str.replace("&quot;", "'")
+    return str
 
 def fCorrect(quest): #returns correct answer
     return "" + quest['correct_answer']
@@ -43,11 +46,17 @@ def fListPossible(quest): #returns a list of the incorrect answre
 def fAnswers_to_String(answers):
     str = ""
     for x in answers:
+        x = x.replace("&#039;", "'")
+        x = x.replace("&quot;", "'")
         str += x + "&*&^!#"
+
+
     return str
 
 def fString_to_Answers(str):
     quest = str.split("&*&^!#")
+    quest = quest.replace("&#039;", "'")
+    quest = quest.replace("&quot;", "'")
     return quest
 
 def main():
