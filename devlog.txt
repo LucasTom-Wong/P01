@@ -135,9 +135,13 @@ juliaN -- 2021-1-3 8:33
 juliaN -- 2021-1-4 8:39
 - work to ensure that database stores data between runs
 
-juliaN -- 2021-1-4 1856
+juliaN -- 2021-1-4 18:56
 - work to ensure that database stores data between runs
 - databases fixed so information stored is kept after sqlite connection broken
 
-lucasT -- 2021-1-4 1856
+lucasT -- 2021-1-4 18:56
 - data is now stored when you add to the leaderboard
+
+juliaN -- 2021-1-4 21:33
+- moved test file (test2.py) for database functions from my fork
+- made sure database files for tests have appropriate names
