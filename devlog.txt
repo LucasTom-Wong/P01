@@ -145,3 +145,6 @@ lucasT -- 2021-1-4 18:56
 juliaN -- 2021-1-4 21:33
 - moved test file (test2.py) for database functions from my fork
 - made sure database files for tests have appropriate names
+
+lucasT -- 2021-1-4 21:42
+- Updated design doc
