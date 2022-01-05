@@ -24,15 +24,40 @@ def fQuestion(quest): #returns the question
     str = "" + quest['question']
     str = str.replace("&#039;", "'")
     str = str.replace("&quot;", "'")
+    str = str.replace("&ldquo;", "'")
+    str = str.replace("&rdquo;", "'")
+    str = str.replace("&aacute;", "a")
+    str = str.replace("&eacute;", "e")
+    str = str.replace("&hellip;", "...")
+    str = str.replace("&amp;", "&")
     return str
 
 def fCorrect(quest): #returns correct answer
-    return "" + quest['correct_answer']
+    str = "" + quest['correct_answer']
+    str = str.replace("&#039;", "'")
+    str = str.replace("&quot;", "'")
+    str = str.replace("&ldquo;", "'")
+    str = str.replace("&rdquo;", "'")
+    str = str.replace("&aacute;", "a")
+    str = str.replace("&eacute;", "e")
+    str = str.replace("&hellip;", "...")
+    str = str.replace("&amp;", "&")
+
+    return str
 
 def fIncorrect(quest): #returns a list of incorrect answers
     listIncorrect = []
     incorrect = quest['incorrect_answers']
     for str in incorrect:
+        str = str.replace("&#039;", "'")
+        str = str.replace("&quot;", "'")
+        str = str.replace("&ldquo;", "'")
+        str = str.replace("&rdquo;", "'")
+        str = str.replace("&aacute;", "a")
+        str = str.replace("&eacute;", "e")
+        str = str.replace("&hellip;", "...")
+        str = str.replace("&amp;", "&")
+
         listIncorrect.append(str)
     # print (listIncorrect)
     return listIncorrect
@@ -46,8 +71,6 @@ def fListPossible(quest): #returns a list of the incorrect answre
 def fAnswers_to_String(answers):
     str = ""
     for x in answers:
-        x = x.replace("&#039;", "'")
-        x = x.replace("&quot;", "'")
         str += x + "&*&^!#"
 
 
