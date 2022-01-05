@@ -6,7 +6,7 @@ import random
 
 def start():
 	global d
-	d = Databases()
+	d = Databases("test2.db")
 
 start()
 
