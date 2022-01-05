@@ -8,12 +8,12 @@ import random
 def purge():
 	global d
 	global db_file
-	db_file = "perm.db"
+	db_file = "test.db"
 	if path.exists(db_file):
 		remove(db_file) #makes sure none of previous test is there
-		d = Databases()
+		d = Databases(db_file)
 	else:
-		d = Databases()
+		d = Databases(db_file)
 
 def show_result(success:bool):
 	if success:
