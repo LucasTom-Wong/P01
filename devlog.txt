@@ -115,7 +115,7 @@ lucasT -- 2022-1-1 16:28
   - now shows an image of a duck
   - "Carraaaasol??" was removed
 
-lucasT -- 2021-1-2 18:16
+lucasT -- 2022-1-2 18:16
 - created leaderboard.html
   - leaderboard
   - doesn't work currently with database
@@ -126,7 +126,7 @@ lucasT -- 2021-1-2 18:16
   - answers still does not work
 - accessRandomDuck.py works better
 
-lucasT -- 2021-1-2 22:42
+lucasT -- 2022-1-2 22:42
 - leaderboard now properly shows the leaderboard with the database (hardcoded in to show 5 places)
 
 juliaN -- 2022-1-3 8:24
@@ -139,28 +139,32 @@ shriyaA -- 2022-1-3 8:32
 shriyaA -- 2022-1-3 17:13
 - added a page for the in between for the home page and trivia page
 
-juliaN -- 2021-1-3 8:33
+juliaN -- 2022-1-3 8:33
 - fixed a comment in databases.py
  
-juliaN -- 2021-1-4 8:39
+juliaN -- 2022-1-4 8:39
 - work to ensure that database stores data between runs
 
 shriyaA -- 2022-1-4 8:44
 - fixed the strings for the question and answer by replacing the codes for the quotes.
 
-juliaN -- 2021-1-4 18:56
+juliaN -- 2022-1-4 18:56
 - work to ensure that database stores data between runs
 - databases fixed so information stored is kept after sqlite connection broken
 
-lucasT -- 2021-1-4 18:56
+lucasT -- 2022-1-4 18:56
 - data is now stored when you add to the leaderboard
 
-juliaN -- 2021-1-4 21:33
+juliaN -- 2022-1-4 21:33
 - moved test file (test2.py) for database functions from my fork
 - made sure database files for tests have appropriate names
 
-lucasT -- 2021-1-4 21:42
-- Updated design doc
+lucasT -- 2022-1-4 21:42
+- updated design doc
 
 shriyaA -- 2022-1-4 22:30
-- fixed more strings with special characters 
+- fixed more strings with special characters
+
+juliaN -- 2022-1-5 6:59
+- updated design doc
+- fixed devlog
