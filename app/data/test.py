@@ -70,7 +70,7 @@ def main():
     test_return_questions(6)
 
     d.print_databases()
-    
+
     print("Leaderboard data in order: " + str(d.return_leaderboard()))
 
     print("All questions used?: " +  str(d.all_questions_used()))

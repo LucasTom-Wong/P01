@@ -11,14 +11,16 @@ import helper.accessOpenTrivia
 import helper.accessRandomDuck
 import helper.accessFunFacts
 import random
-from os import path, remove
+import sys
+from os import remove, path
 from data.databases import Databases
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
 import helper.accessMeme
 
 app = Flask(__name__)    #create Flask object
 newis = helper.accessOpenTrivia.newQuestion()
 # ssl._create_default_https_context = ssl._create_unverified_context
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 db_file = "databases.db"
 d = Databases()
@@ -33,11 +35,13 @@ def randomizedQuestions(quest):
     blue = random.sample(blue, len(blue))
     return blue
 
-def purge():
-    if path.exists(db_file):
-        remove(db_file) #makes sure none of previous test is there
-        d = Databases()
-    d = Databases()
+# def purge():
+#     global db_file
+#     global d
+#     if path.exists(db_file):
+#         remove(db_file) #makes sure none of previous test is there
+#         d = Databases()
+#     d = Databases()
 
 def test_leaderboard_update(num:int=100):
 	success = False
@@ -70,33 +74,33 @@ def convertToFormLeaderboard(database_leaderboard):
     new_string = new_string.replace(" ", "")
     new_string = new_string[1:-1]
     new_string = new_string.replace(',,', ',')
-    print(new_string)
+    # print(new_string)
     values = new_string.split(',')
-    print(values)
+    # print(values)
 
     formAA = {}
 
     try:
-        formAA.update({values[1]: values[2]})
+        formAA.update({values[1][1:-1]: values[2]})
     except:
         formAA.update({"empty": 0})
     try:
-        formAA.update({values[4]: values[5]})
+        formAA.update({values[4][1:-1]: values[5]})
     except:
         formAA.update({"empty": 0})
     try:
-        formAA.update({values[7]: values[8]})
+        formAA.update({values[7][1:-1]: values[8]})
     except:
         formAA.update({"empty": 0})
     try:
-        formAA.update({values[10]: values[11]})
+        formAA.update({values[10][1:-1]: values[11]})
     except:
         formAA.update({"empty": 0})
     try:
-        formAA.update({values[13]: values[14]})
+        formAA.update({values[13][1:-1]: values[14]})
     except:
         formAA.update({"empty": 0})
-    print(formAA)
+    # print(formAA)
     # print(tempString)
     return formAA
 
@@ -108,17 +112,14 @@ def disp_homePage():
 @app.route("/leaderboard")
 def display_Leaderboard():
     global d
-    d = Databases()
+    # d = Databases()
     global db_file
-    db_file = "databases.db"
-    # print("start test!!")
-    # purge()
-    # print("purged")
+    # db_file = "databases.db"
 
     # test_leaderboard_update(5)
     # d.update_leaderboard("EXTRA", 3)
 
-    d.print_databases()
+    # d.print_databases()
 
     debug = str(d.return_leaderboard())
     # print("wy")
@@ -126,7 +127,7 @@ def display_Leaderboard():
     # print("hi")
 
     x = convertToFormLeaderboard(debug)
-    print(x)
+    # print(x)
 
     # print("Leaderboard data in order: " + str(d.return_leaderboard()))
     # leaders = {
@@ -170,8 +171,29 @@ def disp_submitAnswer():
 
 @app.route("/end", methods = ['GET', 'POST'])
 def disp_endPage():
-    return render_template("end.html")
+    global d
+    global db_file
+    global score
+    if (d.update_check(score)):
+        return render_template("end.html")
+    return render_template("tryagain.html")
 
+@app.route("/inputscore", methods=['POST'])
+def scoreChange():
+    global d
+    global db_file
+    global score
+    name = request.form.get('leader')
+    d.update_leaderboard(name, score)
+
+    return redirect("/leaderboard")
+
+# @app.route("/purge")
+# def purgeLeaderboard():
+#     # print("start test!!")
+#     purge()
+#     # print("purged")
+#     return redirect("/leaderboard")
 
 if __name__ == "__main__":
     app.debug = True

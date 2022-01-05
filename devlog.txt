@@ -134,3 +134,9 @@ juliaN -- 2021-1-3 8:33
 
 juliaN -- 2021-1-4 8:39
 - work to ensure that database stores data between runs
+
+juliaN -- 2021-1-4 1856
+- work to ensure that database stores data between runs
+
+lucasT -- 2021-1-4 1856
+- data is now stored when you add to the leaderboard
