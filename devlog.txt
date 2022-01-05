@@ -137,6 +137,7 @@ juliaN -- 2021-1-4 8:39
 
 juliaN -- 2021-1-4 1856
 - work to ensure that database stores data between runs
+- databases fixed so information stored is kept after sqlite connection broken
 
 lucasT -- 2021-1-4 1856
 - data is now stored when you add to the leaderboard
